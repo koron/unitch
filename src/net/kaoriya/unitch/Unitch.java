@@ -16,7 +16,9 @@ public class Unitch extends Activity
         @Override
         protected Void doInBackground(Void... args)
         {
-            Log.v(TAG, "enter");
+            Thread t = Thread.currentThread();
+            t.setPriority(Thread.MAX_PRIORITY - 2);
+            Log.v(TAG, "enter " + t.getPriority());
             while (!isCancelled())
             {
                 // TODO:
